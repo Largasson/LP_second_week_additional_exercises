@@ -14,9 +14,10 @@ def print_days():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    print(f"Сегодня: {datetime.date.today()}")
-    print(f"Вчера: {datetime.date.today() - datetime.timedelta(days=1)}")
-    print(f"30 дней назад: {datetime.date.today() - datetime.timedelta(days=30)}")
+    td = datetime.date.today()
+    print(f"Сегодня: {td}")
+    print(f"Вчера: {td - datetime.timedelta(days=1)}")
+    print(f"30 дней назад: {td - datetime.timedelta(days=30)}")
 
 def str_2_datetime(date_string):
     """

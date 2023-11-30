@@ -21,7 +21,7 @@ def main():
         print(f"Длина строки: {len(data)}")
         print(f"Количество слов в тексте: {len(data.split())}")
         data = data.replace('.', '!')
-        print(data, file=outfile)
+        outfile.write(data)
 
 
 if __name__ == "__main__":

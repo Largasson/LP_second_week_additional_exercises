@@ -18,8 +18,12 @@ def main():
     """
     with open('my_csv_file.csv', 'w', encoding='utf-8', newline='') as file:
         columns = ['name', 'age', 'job']
-        data = [{'name': 'Гендальф', 'age': '2500', 'job': 'Порамситель проблем'}, {'name': 'Сарумян', 'age': '2500', 'job': 'Просто запустался' },
-                {'name': 'Келебримбор', 'age': '1500', 'job': 'Скромный кузнец'}, {'name': 'Талион', 'age': '28', 'job': 'тачка Келебримбора'}]
+        data = [
+            {'name': 'Гендальф', 'age': '2500', 'job': 'Порамситель проблем'},
+            {'name': 'Сарумян', 'age': '2500', 'job': 'Просто запустался' },
+            {'name': 'Келебримбор', 'age': '1500', 'job': 'Скромный кузнец'},
+            {'name': 'Талион', 'age': '28', 'job': 'тачка Келебримбора'}
+        ]
         w = csv.DictWriter(file, fieldnames=columns, delimiter=';')
         w.writeheader()
         w.writerows(data)
