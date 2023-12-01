@@ -1,3 +1,4 @@
+import csv
 """
 
 Домашнее задание №2
@@ -15,7 +16,18 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    with open('my_csv_file.csv', 'w', encoding='utf-8', newline='') as file:
+        columns = ['name', 'age', 'job']
+        data = [
+            {'name': 'Гендальф', 'age': '2500', 'job': 'Порамситель проблем'},
+            {'name': 'Сарумян', 'age': '2500', 'job': 'Просто запустался' },
+            {'name': 'Келебримбор', 'age': '1500', 'job': 'Скромный кузнец'},
+            {'name': 'Талион', 'age': '28', 'job': 'тачка Келебримбора'}
+        ]
+        w = csv.DictWriter(file, fieldnames=columns, delimiter=';')
+        w.writeheader()
+        w.writerows(data)
+
 
 if __name__ == "__main__":
     main()
